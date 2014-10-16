@@ -76,8 +76,23 @@
 			\subsubsection{Vertikal}
 				Vertikale Trennung scheint in diesem Beispiel weniger sinnvoll.
 		\subsection{Konfiguration}
-	\section{Abfragen}
-		Database links are the invisible glue that makes location transparency possible.
+			\subsubsection{Create a Link}
+			
+				"links" sind Verbindungen zwischen Datenbanken, um deren Daten gemeinsam zu verwalten.//
+				"SHARED" gibt an, dass die Verbindung wiederverwendet werden kann.
+				\begin{verbatim}
+				CONNECT uni@local
+				
+				CREATE SHARED PUBLIC DATABASE LINK myDatabase.ac.at
+				AUTHENTICATED BY username IDENTIFIED BY password
+				USING 'nsnMensa';
+				
+				\end{verbatim}
+				
+				
+			\subsection{title}
+	
+\section{Abfragen}
 	\section{Quellen}
 		http://oreilly.com/catalog/ordistsys/section/ch01.html
 \end{document}
