@@ -71,7 +71,7 @@
 		Nachdem wir die erste Datenbank erstellen wollten begannen die Probleme.\\
 		Nach dem Durchforsten einiger Foren bekamen und dem Probieren einiger Methoden bekamen wir meistens trotzdem den gleichen Fehler zurück.\\
 		\textit{("Could not create database")}\\
-		Wir versuchten es mit verschiedenen Usern, mit einem sogenannten Database Configuration Manager ("DBCA") und verschiedernen Methoden für die Erstellung einer Oracle DB, allerdings ohne Erfolg.
+		Wir versuchten es mit verschiedenen Usern, mit einem sogenannten Database Configuration Manager ("DBCA") und verschiedernen Methoden für die Erstellung einer Oracle DB, allerdings ohne Erfolg.\newpage
 		
 		\subsection{Diagramm}
 			\begin{figure}[h!]
@@ -91,16 +91,40 @@
 				"links" sind Verbindungen zwischen Datenbanken, um deren Daten gemeinsam zu verwalten.//
 				"SHARED" gibt an, dass die Verbindung wiederverwendet werden kann.
 				\begin{verbatim}
-				CONNECT uni@local
-				
-				CREATE SHARED PUBLIC DATABASE LINK myDatabase.ac.at
-				AUTHENTICATED BY username IDENTIFIED BY password
+
+				CREATE SHARED PUBLIC DATABASE LINK myLinkedDatabase
+				AUTHENTICATED BY usr IDENTIFIED BY password
 				USING 'nsnMensa';
 				
 				\end{verbatim}
 				
-	
+        \subsection{Transaktionen}
+            Transaktionen benötigen die Information auf welchem Server welche Daten liegen.//
+            Transaktionen können auch mehrere Server gleichzeitig betreffen, schlägt ein Einziger fehl wird alles zurückgesetzt.
+            \begin{verbatim}
+                INSERT INTO usr.lieferant@myLinkedDatabase ...;
+                SELECT * FROM usr.lieferant@myLinkedDatabase;
+                COMMIT;
+	        \end{verbatim}
+        \subsection{RPC}
+            Es lassen sich ebenfalls Methoden auf verteilten Systemen aufrufen
+            \begin{verbatim}
+                BEGIN
+                  usr.lieferant@myLinkedDatabase(1257);
+                END;
+            \end{verbatim}
+         \subsection{Transparenz}
+            Server-Aufteilungen lassen sich für Endanwender/Anwendungen verschleidern
+            \begin{verbatim}
+                CREATE PUBLIC SYNONYM lieferant
+                  FOR usr.lieferant@myLinkedDatabase
+            \end{verbatim}
+            Nun lässt sich der lieferant aufrufen als wäre er lokal verfügbar.
+
 \section{Abfragen}
 	\section{Quellen}
-		http://oreilly.com/catalog/ordistsys/section/ch01.html
+	\emph{http://oreilly.com/catalog/ordistsys/section/ch01.html}\\
+	\emph{http://docs.oracle.com/}\\
+	\emph{https://apex.oracle.com/pls/apex/f?p=44785:1}
+	
 \end{document}
