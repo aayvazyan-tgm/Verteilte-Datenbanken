@@ -1,15 +1,16 @@
-\documentclass[12pt,a4paper,draft]{report}
+\documentclass[12pt,a4paper]{report}
 \usepackage[utf8]{inputenc}
-%%\usepackage[german]{babel}
+\usepackage[german]{babel}
 \usepackage[T1]{fontenc}
 \usepackage{amsmath}
-\usepackage{lastpage}
-\usepackage{fancyhdr}
-\usepackage{graphicx}
 \usepackage{amsfonts}
 \usepackage{amssymb}
 \usepackage{lmodern}
 \usepackage{authoraftertitle}
+\usepackage{fancyhdr}
+\usepackage[final]{graphicx}
+\DeclareGraphicsExtensions{.pdf,.png,.jpg}
+\usepackage{color}
 
 % header
 \pagestyle{fancy}
@@ -63,6 +64,12 @@
 	Um eine zu große Eintönigkeit in der Menüabfolge zu vermeiden, wird weiters gespeichert, an
 	welchen Tagen welche Menüs serviert wurden. An jedem Tag werden genau drei Menüs serviert.
 	\chapter{Datenbank Entwurf}
+		\begin{figure}[h!]
+			\centering
+			\includegraphics[width=1\linewidth]{ERD/MensaEr.png}
+			\caption{ERD}
+			\label{fig:MensaEr.png}
+		\end{figure}
 	\section{Entwurf}
 	\section{Diagramm}
 	\includegraphics[width=0.5\textwidth]{ERD/MensaEr.png}
@@ -70,4 +77,6 @@
 	\section{Horizontal}
 	\section{Vertikal}
 	\chapter{Abfragen}
+	\chapter{Quellen}
+	http://oreilly.com/catalog/ordistsys/chapter/ch01.html
 \end{document}

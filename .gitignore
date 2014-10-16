@@ -26,7 +26,8 @@ $RECYCLE.BIN/
 .LSOverride
 
 # Icon must end with two \r
-Icon
+Icon
+
 
 # Thumbnails
 ._*
@@ -105,8 +106,6 @@ Temporary Items
 *.glg
 *.glo
 *.gls
-# hyperref
-*.brf
 # listings
 *.lol
 # makeidx
@@ -136,3 +135,17 @@ sympy-plots-for-*.tex/
 *.tdo
 # xindy
 *.xdy
+
+# Eclipse
+.classpath
+.project
+.settings/
+
+# Intellij
+.idea/
+*.iml
+*.iws
+
+# Maven
+log/
+target/
