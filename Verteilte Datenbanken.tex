@@ -3,10 +3,22 @@
 %%\usepackage[german]{babel}
 \usepackage[T1]{fontenc}
 \usepackage{amsmath}
+\usepackage{lastpage}
+\usepackage{fancyhdr}
 \usepackage{amsfonts}
 \usepackage{amssymb}
 \usepackage{lmodern}
 \usepackage{authoraftertitle}
+
+% header
+\pagestyle{fancy}
+\fancyhead[L]{\today}
+\fancyhead[R]{DezSys - Verteilte Datenbanken}
+
+%footer
+\fancyfoot[L]{Ayvazyan, Haidn}
+\fancyfoot[C]{5A HIT}
+\fancyfoot[R]{Seite \thepage/\pageref{LastPage}}
 
 \date{10.10.2014}
 \author{Ari Ayvazyan, Martin Haidn}
@@ -18,7 +30,7 @@
 	\chapter{Angabe}
 	\section{Einführung}
 	
-	Es soll eine Verteilte Datenbank mit Oracle XE realisiert werden. Die Hauptaufgabe ist esherauszufinden wie man eine verteilte Datenbank erstellt. Die einzige Informationsquelle ist das weite Netz, allem voran die Oracle Dokumentation Site. Der komplette Datenbankentwurf für ein
+	Es soll eine Verteilte Datenbank mit Oracle XE realisiert werden. Die Hauptaufgabe ist es herauszufinden wie man eine verteilte Datenbank erstellt. Die einzige Informationsquelle ist das weite Netz, allem voran die Oracle Dokumentation Site. Der komplette Datenbankentwurf für ein
 	verteiltes Oracle-DBS soll erstellt werden. Zu verwenden ist dabei eine geeignete
 	Fragmentierungsmethode! Die einzelnen Schritte sind zu dokumentieren, und Abfragen
 	durchzuführen, die eine Connection auf die verteilte Instanz nötig machen!
