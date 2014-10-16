@@ -81,17 +81,37 @@
 				"links" sind Verbindungen zwischen Datenbanken, um deren Daten gemeinsam zu verwalten.//
 				"SHARED" gibt an, dass die Verbindung wiederverwendet werden kann.
 				\begin{verbatim}
-				CONNECT uni@local
-				
-				CREATE SHARED PUBLIC DATABASE LINK myDatabase.ac.at
-				AUTHENTICATED BY username IDENTIFIED BY password
+
+				CREATE SHARED PUBLIC DATABASE LINK myLinkedDatabase
+				AUTHENTICATED BY usr IDENTIFIED BY password
 				USING 'nsnMensa';
 				
 				\end{verbatim}
 				
 				
-			\subsection{title}
-	
+        \subsection{Transaktionen}
+            Transaktionen benötigen die Information auf welchem Server welche Daten liegen.//
+            Transaktionen können auch mehrere Server gleichzeitig betreffen, schlägt ein Einziger fehl wird alles zurückgesetzt.
+            \begin{verbatim}
+                INSERT INTO usr.lieferant@myLinkedDatabase ...;
+                SELECT * FROM usr.lieferant@myLinkedDatabase;
+                COMMIT;
+	        \end{verbatim}
+        \subsection{RPC}
+            Es lassen sich ebenfalls Methoden auf verteilten Systemen aufrufen
+            \begin{verbatim}
+                BEGIN
+                  usr.lieferant@myLinkedDatabase(1257);
+                END;
+            \end{verbatim}
+         \subsection{Transparenz}
+            Server-Aufteilungen lassen sich für Endanwender/Anwendungen verschleidern
+            \begin{verbatim}
+                CREATE PUBLIC SYNONYM lieferant
+                  FOR usr.lieferant@myLinkedDatabase
+            \end{verbatim}
+            Nun lässt sich der lieferant aufrufen als wäre er lokal verfügbar.
+
 \section{Abfragen}
 	\section{Quellen}
 		http://oreilly.com/catalog/ordistsys/section/ch01.html
