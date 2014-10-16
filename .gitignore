@@ -106,8 +106,6 @@ Temporary Items
 *.glg
 *.glo
 *.gls
-# hyperref
-*.brf
 # listings
 *.lol
 # makeidx
@@ -147,9 +145,6 @@ sympy-plots-for-*.tex/
 .idea/
 *.iml
 *.iws
-
-# Mac
-.DS_Store
 
 # Maven
 log/
