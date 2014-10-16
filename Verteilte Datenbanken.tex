@@ -1,4 +1,4 @@
-\documentclass[12pt,a4paper]{report}
+\documentclass[12pt,a4paper]{article}
 \usepackage[utf8]{inputenc}
 \usepackage[german]{babel}
 \usepackage[T1]{fontenc}
@@ -29,13 +29,14 @@
 \begin{document}
 \maketitle
 \tableofcontents
-	\chapter{Angabe}
-		\section{Einführung}	
+\newpage
+	\section{Angabe}
+		\subsection{Einführung}	
 			Es soll eine Verteilte Datenbank mit Oracle XE realisiert werden. Die Hauptaufgabe ist es herauszufinden wie man eine verteilte Datenbank erstellt. Die einzige Informationsquelle ist das weite Netz, allem voran die Oracle Dokumentation Site. Der komplette Datenbankentwurf für ein
 			verteiltes Oracle-DBS soll erstellt werden. Zu verwenden ist dabei eine geeignete
 			Fragmentierungsmethode! Die einzelnen Schritte sind zu dokumentieren, und Abfragen
 			durchzuführen, die eine Connection auf die verteilte Instanz nötig machen!
-		\section{Anforderungsanalyse}
+		\subsection{Anforderungsanalyse}
 			Die MensaAustria plant die Erstellung einer Datenbank zur Vereinfachung der Arbeitsabläufe. Dabei
 			ist zu beachten, dass jede Universität ihre eigene Verwaltung bekommt, jedoch von einer Stelle
 			geleitet wird.\\\\
@@ -61,22 +62,22 @@
 			vorkommen.\\\\
 			Um eine zu große Eintönigkeit in der Menüabfolge zu vermeiden, wird weiters gespeichert, an
 			welchen Tagen welche Menüs serviert wurden. An jedem Tag werden genau drei Menüs serviert.
-	\chapter{Datenbank Entwurf}
-		\section{Diagramm}
+	\section{Umsetzung}
+		\subsection{Diagramm}
 			\begin{figure}[h!]
 				\centering
 				\includegraphics[width=1\linewidth]{ERD/MensaEr.png}
 				\caption{ERD}
 				\label{fig:MensaEr.png}
 			\end{figure}
-		\section{Konfiguration}
-	\chapter{Fragmentierung}
-		\section{Horizontal}
-			Die Mensa scheint perfekt für eine horizontale Fragmentierung geeignet, hier würden die Daten je nach geografischer Lage des typischen Zugriffsorts horizontal getrennt.
-		\section{Vertikal}
-			Vertikale Trennung scheint in diesem Beispiel weniger sinnvoll.
-	\chapter{Abfragen}
+		\subsection{Fragmentierung}
+			\subsubsection{Horizontal}
+				Die Mensa scheint perfekt für eine horizontale Fragmentierung geeignet, hier würden die Daten je nach geografischer Lage des typischen Zugriffsorts horizontal getrennt.
+			\subsubsection{Vertikal}
+				Vertikale Trennung scheint in diesem Beispiel weniger sinnvoll.
+		\subsection{Konfiguration}
+	\section{Abfragen}
 		Database links are the invisible glue that makes location transparency possible.
-	\chapter{Quellen}
-		http://oreilly.com/catalog/ordistsys/chapter/ch01.html
+	\section{Quellen}
+		http://oreilly.com/catalog/ordistsys/section/ch01.html
 \end{document}
