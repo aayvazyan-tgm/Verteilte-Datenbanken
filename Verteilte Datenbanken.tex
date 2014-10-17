@@ -9,6 +9,7 @@
 \usepackage{authoraftertitle}
 \usepackage{fancyhdr}
 \usepackage{lastpage}
+\usepackage{verbatim}
 \usepackage[final]{graphicx}
 \DeclareGraphicsExtensions{.pdf,.png,.jpg}
 \usepackage{color}
@@ -85,6 +86,10 @@
 				Die Mensa scheint perfekt für eine horizontale Fragmentierung geeignet, hier würden die Daten je nach geografischer Lage des typischen Zugriffsorts horizontal getrennt.
 			\subsubsection{Vertikal}
 				Vertikale Trennung scheint in diesem Beispiel weniger sinnvoll.
+		\newpage
+		\subsection{SQL Create Script}
+		
+		{\scriptsize 	\verbatiminput{ERD/MensaER.sql}}
 		\subsection{Konfiguration}
 			\subsubsection{Create a Link}
 			
