@@ -85,8 +85,8 @@
 			\subsubsection{Horizontal}
 				Die Mensa scheint perfekt für eine horizontale Fragmentierung geeignet, hier würden die Daten je nach geografischer Lage des typischen Zugriffsorts horizontal getrennt.
 			\subsubsection{Vertikal}
-				Datensätze für dieses Beispiel vertikal zu fragmentieren scheint nicht sinnvoll, da wir keine eigenen Relationen benötigen.\\
-				Zusätzlich war es schwierig eine Dokumentaion für das vertikal Fragmentieren zu finden und es stellt sich die Frage ob die Realisierung via Oracle XE überhaupt möglich ist.
+				Oracle XE ünterstützt keine Foreign-Keys in der Tabellendefinition. Sind Fremdschlüssel für die Konsistenz der Datenbank erforderlich, so müssen die Spalten nach dem Erzeugen der Tabelle "ge-ALTER-t" werden.
+				Datensätze für dieses Beispiel vertikal zu fragmentieren scheint ohnehin nicht sinnvoll, da wir keine eigenen Relationen benötigen.\\
 		\newpage
 		\subsection{SQL Create Script}
 		
