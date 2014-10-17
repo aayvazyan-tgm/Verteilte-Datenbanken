@@ -149,4 +149,9 @@ sympy-plots-for-*.tex/
 # Maven
 log/
 target/
+
+
 Verteilte Datenbanken.pdf
+
+*.lock
+*.bak
